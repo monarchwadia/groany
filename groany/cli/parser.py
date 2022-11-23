@@ -1,6 +1,6 @@
 from argparse import ArgumentParser;
 
-def parse_arguments():
+def parse_arguments(args):
   parser = ArgumentParser(
     prog="groany-jokes-cli",
     description="Dad jokes to make you groan, right in your terminal."
