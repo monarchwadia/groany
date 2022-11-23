@@ -1,5 +1,9 @@
-from groany import groany
+from mock import patch, MagicMock
+from groany import sum
 
-def test_main():
-  response = groany(prompt="Hello, world!")
-  print(response)
+class TestMain:
+  @patch('groany.sum.sum', MagicMock(return_value=10))
+  def test_sum(self):
+    result = sum.sum(1,2)
+    print("RESULT", result)
+    assert result == 10
