@@ -2,5 +2,7 @@ from requests import get;
 from urllib import parse;
 
 def api_search(prompt):
-  quoted_prompt = parse.quote(prompt)
-  return get("https://icanhazdadjoke.com/search?term=" + quoted_prompt, headers={"Accept": "application/json"})
+  url = "https://icanhazdadjoke.com/search?term=" + parse.quote(prompt)
+  headers = {"Accept": "application/json"}
+  response = get(url, headers=headers)
+  return response.json()
