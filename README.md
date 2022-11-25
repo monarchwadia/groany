@@ -22,7 +22,7 @@ Inside `groany`, you gain access to the following commands.
 * `<no term entered, just press enter>` - If you input a blank search term, Groany will give you a random joke from the icanhazdadjoke API. Great for when inspiration has run dry.
 * `funny` - If you type this, you'll exit out of groany. But why would you ever want to?
 
-### Sample Usage
+## Sample Usage
 
 ```
 $> groany
@@ -42,17 +42,17 @@ What kind of dad joke are you in the mood for?
 Goodbye!
 ```
 
-### Configuration and joke deduplication
+## Configuration and joke deduplication
 
 Groany saves its configuration files inside your user's home directory, in a folder named `.groany`. Currently, there is only one such configuration file: `.groany/groany.json`. This file keeps track of jokes you've seen in the past, and stops duplicate jokes from appearing in your terminal.
 
 However, this DOES mean that Groany will frequently run out of jokes to tell you. If you want to reset Groany, simply delete the `.groany` folder and Groany won't even know what hit it.
 
-## Contributing
+# Contributing
 
 Want to get involved? That's awesome. We're always looking for new contributors to help make Groany even better! Here's how to get started.
 
-### Dev workflow
+## Dev workflow
 
 First, fork and clone down this repo. 
 
