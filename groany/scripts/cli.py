@@ -4,8 +4,6 @@ from groany import groany
 prompt = "What kind of dad joke are you in the mood for?"
 
 class GroanyCLI(cmd.Cmd):
-  """Simple command processor example."""
-
   intro = 'Welcome to groany. You can use this to get dad jokes. Type help or ? to list commands.\n' + prompt
   prompt = '(groany)> '
   file = None
