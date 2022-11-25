@@ -22,12 +22,12 @@ def test_that_the_mock_works(search: MagicMock):
   }
 
   search.return_value = return_value
-  result = groany({ 'page': 1, 'term': 'test params' })
+  result = groany('test params')
   assert result != None
   assert result['joke'] == 'test joke'
 
 @patch('groany.api.search')
 def test_api_search_was_called_with_groany_prompt(search: MagicMock):
-  groany({ 'page': 1, 'term': 'this is a test' })
+  groany('this is a test')
   search.assert_called_with({ 'page': 1, 'term': 'this is a test', 'limit': 30 })
 
