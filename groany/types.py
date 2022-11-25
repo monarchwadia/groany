@@ -20,3 +20,6 @@ class JokeSearchParams(TypedDict):
   term: str
   page: int | None
   limit: int | None
+
+class GroanyJson(TypedDict):
+  used_joke_ids: list[str]

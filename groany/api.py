@@ -1,6 +1,6 @@
 from requests import get;
 from urllib import parse;
-from groany.api_types import Joke, JokeSearchParams, JokeSearchResults
+from groany.types import Joke, JokeSearchParams, JokeSearchResults
 
 def random() -> Joke:
   url = "https://icanhazdadjoke.com/"
