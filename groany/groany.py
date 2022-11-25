@@ -1,20 +1,13 @@
-from typing import TypedDict
 from . import api;
 
 used_joke_ids: list[str] = []
 
-class GroanyParams(TypedDict):
-  term: str | None
-  page: int
-
-def groany(params: GroanyParams) -> api.Joke | None:
-  term = params["term"]
-  page = params["page"]
-
+def groany(term: str) -> api.Joke | None:
   # Don't return a joke if the prompt is empty.
   if term is None or term == "":
     return None
 
+  page = 1
   while True:
     LIMIT = 30
 

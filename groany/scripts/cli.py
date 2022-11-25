@@ -1,10 +1,16 @@
 import cmd
+from groany import groany
 
 class GroanyCLI(cmd.Cmd):
   """Simple command processor example."""
   
   def default(self, line: str):
-    print ("<Filtered joke goes here>")
+    result = groany(line)
+    if result is None:
+      print("No jokes found.")
+    else:
+      joke_str = result["joke"]
+      print (joke_str)
     
   def emptyline(self):
     print ("<Random joke goes here>")
