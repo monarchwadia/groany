@@ -3,9 +3,9 @@ from groany import groany
 from tempfile import mkdtemp
 from pytest import fixture
 from pathlib import Path
-from io import BytesIO, StringIO, TextIOWrapper
+from io import StringIO
 from groany.scripts import cli
-from typing import Any, Callable
+from typing import Any
 
 class MockBuffer:
   def __init__(self, data: str):
