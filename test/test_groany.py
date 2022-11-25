@@ -3,7 +3,9 @@ from groany import groany
 from tempfile import mkdtemp
 from pytest import fixture
 from pathlib import Path
-
+from io import BytesIO, StringIO
+from groany.scripts import cli
+from typing import Any
 @fixture(autouse=True)
 def setup():
   # setup
@@ -46,4 +48,15 @@ def test_that_the_mock_works(search: MagicMock):
 def test_api_search_was_called_with_groany_prompt(search: MagicMock):
   groany('this is a test')
   search.assert_called_with({ 'page': 1, 'term': 'this is a test', 'limit': 30 })
+
+def test_funny_exits_program():
+  with patch("sys.stdin", StringIO("funny")), patch("sys.stdout", new_callable=StringIO) as mocked_out:
+    cli.exec()
+  
+  the_mock: Any = mocked_out # Ugly hack to get Pylance to stop complaining about types
+  assert isinstance(the_mock, StringIO)
+  assert the_mock.getvalue() == "(Cmd) Goodbye!\n"
+
+  
+
 
