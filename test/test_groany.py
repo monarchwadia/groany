@@ -63,7 +63,7 @@ def test_funny_exits_program():
   
   the_mock: Any = mocked_out # Ugly hack to get Pylance to stop complaining about types
   assert isinstance(the_mock, StringIO)
-  assert the_mock.getvalue() == "(Cmd) Goodbye!\n"
+  assert the_mock.getvalue() == "Welcome to groany. You can use this to get dad jokes. Type help or ? to list commands.\nWhat kind of dad joke are you in the mood for?\n(groany)> What kind of dad joke are you in the mood for?\nGoodbye!\n"
 
 @patch('groany.api.search')
 def test_uniqueness(search: MagicMock):
@@ -95,7 +95,7 @@ def test_uniqueness(search: MagicMock):
 
   the_mock: Any = mocked_out # Ugly hack to get Pylance to stop complaining about types
   assert isinstance(the_mock, StringIO)
-  assert the_mock.getvalue() == "(Cmd) first joke\n(Cmd) second joke\n(Cmd) No jokes found.\n(Cmd) Goodbye!\n"
+  assert the_mock.getvalue() == "Welcome to groany. You can use this to get dad jokes. Type help or ? to list commands.\nWhat kind of dad joke are you in the mood for?\n(groany)> first joke\nWhat kind of dad joke are you in the mood for?\n(groany)> second joke\nWhat kind of dad joke are you in the mood for?\n(groany)> No jokes found.\nWhat kind of dad joke are you in the mood for?\n(groany)> What kind of dad joke are you in the mood for?\nGoodbye!\n"
   
 
 @patch('groany.api.search')
@@ -130,7 +130,7 @@ def test_uniqueness_across_invocations(search: MagicMock):
 
   the_mock: Any = mocked_out # Ugly hack to get Pylance to stop complaining about types
   assert isinstance(the_mock, StringIO)
-  assert the_mock.getvalue() == "(Cmd) first joke\n(Cmd) Goodbye!\n"
+  assert the_mock.getvalue() == "Welcome to groany. You can use this to get dad jokes. Type help or ? to list commands.\nWhat kind of dad joke are you in the mood for?\n(groany)> first joke\nWhat kind of dad joke are you in the mood for?\n(groany)> What kind of dad joke are you in the mood for?\nGoodbye!\n"
 
   # 2nd invocation
 
@@ -139,7 +139,7 @@ def test_uniqueness_across_invocations(search: MagicMock):
 
   the_mock: Any = mocked_out # Ugly hack to get Pylance to stop complaining about types
   assert isinstance(the_mock, StringIO)
-  assert the_mock.getvalue() == "(Cmd) second joke\n(Cmd) Goodbye!\n"
+  assert the_mock.getvalue() == "Welcome to groany. You can use this to get dad jokes. Type help or ? to list commands.\nWhat kind of dad joke are you in the mood for?\n(groany)> second joke\nWhat kind of dad joke are you in the mood for?\n(groany)> What kind of dad joke are you in the mood for?\nGoodbye!\n"
 
   # 3rd invocation
 
@@ -149,5 +149,5 @@ def test_uniqueness_across_invocations(search: MagicMock):
   the_mock: Any = mocked_out # Ugly hack to get Pylance to stop complaining about types
   assert isinstance(the_mock, StringIO)
 
-  assert the_mock.getvalue() == "(Cmd) No jokes found.\n(Cmd) Goodbye!\n"
+  assert the_mock.getvalue() == "Welcome to groany. You can use this to get dad jokes. Type help or ? to list commands.\nWhat kind of dad joke are you in the mood for?\n(groany)> No jokes found.\nWhat kind of dad joke are you in the mood for?\n(groany)> What kind of dad joke are you in the mood for?\nGoodbye!\n"
   

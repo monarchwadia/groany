@@ -1,2 +1,2 @@
 pyright;
-pytest -s;
+pytest -s -vv;
