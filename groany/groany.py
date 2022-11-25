@@ -1,13 +1,5 @@
-from groany.api_types import Joke
+from groany.unique import joke_is_used, joke_mark_as_used
 from . import api;
-
-used_joke_ids: list[str] = []
-
-def joke_is_used(joke: Joke) -> bool:
-  return joke["id"] in used_joke_ids
-
-def joke_mark_as_used(joke: Joke) -> None:
-  used_joke_ids.append(joke["id"])
 
 def groany_random() -> api.Joke | None:
   retries = 5
@@ -50,11 +42,11 @@ def groany_with_term(term: str) -> api.Joke | None:
     for joke in results["results"]:
 
       # don't repeat jokes
-      if joke["id"] in used_joke_ids:
+      if joke_is_used(joke):
         continue
       
       # found a unique joke. return.
-      used_joke_ids.append(joke["id"])
+      joke_mark_as_used(joke)
       return joke
     
     # The loop completed without finding a unique joke. Try the next page, unless there are no more pages.
