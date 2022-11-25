@@ -30,5 +30,8 @@ class GroanyCLI(cmd.Cmd):
   def postloop(self) -> None:
     print ("Goodbye!")
 
-if __name__ == "__main__":
+def exec():
   GroanyCLI().cmdloop()
+
+if __name__ == "__main__":
+  exec()

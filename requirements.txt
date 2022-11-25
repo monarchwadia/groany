@@ -4,4 +4,4 @@ requests==2.28.1
 
 # dev
 
-pyrigh==1.1.281
+pyright==1.1.281

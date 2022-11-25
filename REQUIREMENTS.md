@@ -42,8 +42,9 @@ I want to install a package from [TestPyPI](https://packaging.python.org/en/late
 
 ## TODO
 
-[] CLI asks what kind of dad joke are you in the mood for, takes a prompt, and loops until "funny" is put in
-[] Dad jokes never repeat, even between invocations
+[x] CLI asks what kind of dad joke are you in the mood for, takes a prompt, and loops until "funny" is put in
+[x] Dad jokes never repeat, even between invocations
 [] Publish to TestPyPI
 [] Works as expected via TestPyPI
+[] Clean code
 [] Include a README as per specs
