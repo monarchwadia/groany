@@ -13,7 +13,12 @@ class GroanyCLI(cmd.Cmd):
       print (joke_str)
     
   def emptyline(self):
-    print ("<Random joke goes here>")
+    result = groany(None)
+    if result is None:
+      print("No jokes found.")
+    else:
+      joke_str = result["joke"]
+      print (joke_str)
     return False
 
   def do_funny(self, line: str):

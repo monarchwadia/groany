@@ -1,8 +1,33 @@
+from groany.api_types import Joke
 from . import api;
 
 used_joke_ids: list[str] = []
 
-def groany(term: str) -> api.Joke | None:
+def joke_is_used(joke: Joke) -> bool:
+  return joke["id"] in used_joke_ids
+
+def joke_mark_as_used(joke: Joke) -> None:
+  used_joke_ids.append(joke["id"])
+
+def groany_random() -> api.Joke | None:
+  retries = 5
+  while retries > 0:
+    joke = api.random()
+
+    # Don't return a joke if it is already used
+    if joke_is_used(joke):
+      retries -= 1
+      continue
+  
+    # Found a unique joke. Return it.
+    joke_mark_as_used(joke)
+    return joke
+  
+  # No unique jokes found after 5 retries.
+  return None;
+
+
+def groany_with_term(term: str) -> api.Joke | None:
   # Don't return a joke if the prompt is empty.
   if term is None or term == "":
     return None
@@ -42,4 +67,8 @@ def groany(term: str) -> api.Joke | None:
     continue
 
 
-    
+def groany(term: str | None) -> api.Joke | None:
+  if term is None or term == "":
+    return groany_random()
+  else:
+    return groany_with_term(term)
