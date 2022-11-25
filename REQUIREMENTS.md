@@ -38,3 +38,12 @@ I want to install a package from [TestPyPI](https://packaging.python.org/en/late
 - I should never see the same dad joke twice, even between multiple invocations of the CLI on the same machine.
 - Name your package something unique to you. **Do not** include “judoscale” or “dad-jokes” in the package name since it might conflict with assignments from other candidates.
 - Include a README that explains how to install and use the package, **and** how to contribute to the package (running the code locally and running tests).
+
+
+## TODO
+
+[] CLI asks what kind of dad joke are you in the mood for, takes a prompt, and loops until "funny" is put in
+[] Dad jokes never repeat, even between invocations
+[] Publish to TestPyPI
+[] Works as expected via TestPyPI
+[] Include a README as per specs

@@ -20,10 +20,27 @@ class JokeSearchResults(TypedDict):
   total_jokes: int
   total_pages: int
 
+class JokeSearchParams(TypedDict):
+  term: str
+  page: int | None
+  limit: int | None
+
 # Methods
 
-def api_search(prompt: str) -> JokeSearchResults:
-  url = "https://icanhazdadjoke.com/search?term=" + parse.quote(prompt)
+def search(params: JokeSearchParams) -> JokeSearchResults:
+  term = params["term"]
+  page = params["page"]
+  limit = params["limit"]
+
+  url = "https://icanhazdadjoke.com/search?term=" + parse.quote(term)
+
+  if page != None and page > 1:
+    url += "&page=" + str(page)
+
+  if limit != None:
+    url += "&limit=" + str(limit)
+
   headers = {"Accept": "application/json"}
   response = get(url, headers=headers)
   return response.json()
+
