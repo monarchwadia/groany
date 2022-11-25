@@ -71,15 +71,21 @@ pip install --editable .
 
 Cool! You're all set up! To contribute back, simply open a PR from your repo to our `main` branch.
 
-## Publishing
+## Testing
 
-Publishing is usually done by the core team. Here are the steps we take in order to publish the repo:
+You can test the project using the following command from the root directory of the project.
 
 ```
-rm -rf dist/
-python -m build
-pip install --upgrade twine
-twine upload --repository testpypi dist/*
+./test.sh
+```
+
+## Publishing
+
+Publishing is usually done by the core team. Here are the steps we take in order to publish the repo, from the root directory of the project.
+
+```
+./build.sh;
+./publish.sh;
 ```
 
 When prompted for your username and your password, use `__token__` as the username. For password, just use your API token from PyPI.
