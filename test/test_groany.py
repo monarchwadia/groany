@@ -1,6 +1,22 @@
 from mock import patch, MagicMock
 from groany import groany
+from tempfile import mkdtemp
+from pytest import fixture
+from pathlib import Path
 
+@fixture(autouse=True)
+def setup():
+  # setup
+  tmpdir = Path(mkdtemp())
+  patch('groany.unique.get_groany_home_path', return_value=tmpdir).start()
+
+  #run test
+  yield
+
+  # cleanup
+  for file in tmpdir.iterdir():
+    file.unlink()
+  tmpdir.rmdir()
 
 @patch('groany.api.search')
 def test_that_the_mock_works(search: MagicMock):
