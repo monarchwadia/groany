@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='groany',
-    version='0.0.5',
+    version='0.0.6',
     author='Monarch Wadia',
     author_email='monarchwadia@gmail.com',
     description='Dad jokes in your terminal.',

@@ -14,7 +14,7 @@ class GroanyCLI(cmd.Cmd):
     'Get a funny joke based on your input.'
     result = groany(line)
     if result is None:
-      print("No jokes found.")
+      print("No more jokes!")
     else:
       joke_str = result["joke"]
       print (joke_str)
@@ -23,7 +23,7 @@ class GroanyCLI(cmd.Cmd):
     'Get a random funny joke.'
     result = groany(None)
     if result is None:
-      print("No jokes found.")
+      print("No more jokes!")
     else:
       joke_str = result["joke"]
       print (joke_str)
