@@ -5,7 +5,7 @@ from groany import groany
 @patch('groany.api.api_search')
 def test_that_the_mock_works(api_search):
   api_search.return_value={'results': [{'joke': 'test'}]}
-  result = groany("")
+  result = groany('x')
   assert result['joke'] == 'test'
 
 @patch('groany.api.api_search')
