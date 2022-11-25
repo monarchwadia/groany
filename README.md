@@ -83,6 +83,14 @@ You can test the project using the following command from the root directory of 
 ./test.sh
 ```
 
+## Running the CLI for testing purposes
+
+To manually run the CLI, you can either use a locally installed copy as described in the `Dev Workflow` section. Or, you can use...
+
+```
+./cli.sh
+```
+
 ## Publishing
 
 Publishing is usually done by the core team. Here are the steps we take in order to publish the repo, from the root directory of the project.

@@ -47,5 +47,5 @@ I want to install a package from [TestPyPI](https://packaging.python.org/en/late
 [x] Unit tests
 [x] Publish to TestPyPI
 [x] Works as expected via TestPyPI
-[] Include a README as per specs
-[] Clean code
+[x] Include a README as per specs
+[x] Clean code
