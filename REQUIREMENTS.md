@@ -45,7 +45,7 @@ I want to install a package from [TestPyPI](https://packaging.python.org/en/late
 [x] CLI asks what kind of dad joke are you in the mood for, takes a prompt, and loops until "funny" is put in
 [x] Dad jokes never repeat, even between invocations
 [x] Unit tests
-[] Publish to TestPyPI
-[] Works as expected via TestPyPI
-[] Clean code
+[x] Publish to TestPyPI
+[x] Works as expected via TestPyPI
 [] Include a README as per specs
+[] Clean code

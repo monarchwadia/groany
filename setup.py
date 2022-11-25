@@ -2,11 +2,11 @@ from setuptools import setup
 
 setup(
     name='groany',
-    version='0.0.1',
+    version='0.0.3',
     author='Monarch Wadia',
     author_email='monarchwadia@gmail.com',
     description='Dad jokes in your terminal.',
-    long_description='file: README.md',
+    long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     url='https://github.com/judoscale/python-assignment-monarch',
     entry_points={
@@ -22,7 +22,8 @@ setup(
       'dev': [
           "pytest==7.2.0",
           "mock==4.0.3",
-          'pyright==1.1.281'
+          'pyright==1.1.281',
+          "pypandoc==1.10",
       ]
     },
     python_requires='>=3.11',

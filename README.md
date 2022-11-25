@@ -28,3 +28,20 @@ We don't want to install dev dependencies in production...
 ```
 python setup.py install
 ```
+
+## Publishing
+
+```
+rm -rf dist/
+python -m build
+pip install --upgrade twine
+twine upload --repository testpypi dist/*
+```
+Username: `__token__`
+Password: `<the api token>`
+
+## Installing from remote
+
+```
+pip install --index-url https://test.pypi.org/simple/ groany
+```
