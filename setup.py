@@ -25,9 +25,5 @@ setup(
           'pyright==1.1.281'
       ]
     },
-    options={
-      'packages': 'find:',
-      'python_requires': '>=3.11',
-      'include_package_data': True,
-    }
+    python_requires='>=3.11',
 )
