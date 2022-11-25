@@ -48,6 +48,10 @@ Groany saves its configuration files inside your user's home directory, in a fol
 
 However, this DOES mean that Groany will frequently run out of jokes to tell you. If you want to reset Groany, simply delete the `.groany` folder and Groany won't even know what hit it.
 
+## TestPyPI
+
+This project is exclusively hosted on TestPyPI. Please make sure you're installing from that repository.
+
 # Contributing
 
 Want to get involved? That's awesome. We're always looking for new contributors to help make Groany even better! Here's how to get started.
@@ -62,7 +66,7 @@ Then, do `pip install` for development purposes, like so:
 pip install -e .[dev]
 ```
 
-Now, you want to link your local copy of groany into your binary PATH. `pip` makes this super easy to do with the following command. After this, invoking `groany` from the CLI will run your project in the terminal. Changes in your source code should automatically propagate globally.
+Now, you want to link your local copy of groany into your binary PATH. `pip` makes this super easy to do with the following command. After this, invoking `groany` from the CLI w`__token__` as the username. For password, justill run your project in the terminal. Changes in your source code should automatically propagate globally.
 
 ```
 pip uninstall groany; # in case there's an older version installed
@@ -88,4 +92,4 @@ Publishing is usually done by the core team. Here are the steps we take in order
 ./publish.sh;
 ```
 
-When prompted for your username and your password, use `__token__` as the username. For password, just use your API token from PyPI.
+When prompted for your password, just use your API token from TestPyPI.
