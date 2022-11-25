@@ -1,5 +1,5 @@
 import sys;
-from groany.cli.cli_main import cli_main
+from groany.cli import exec_cli
 
-result = cli_main(sys.argv[1:])
+result = exec_cli(sys.argv[1:])
 print(result)
