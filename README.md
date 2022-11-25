@@ -8,7 +8,12 @@ A painfully interactive CLI you can use for inspiration when torturing the spous
 
 You can install Groany using pip.
 
-```
+```sh
+# IMPORTANT!  These steps are necessary because the requests library in TestPyPI is severely outdated.
+pip uninstall requests -y
+pip install requests
+
+# Finally, install groany from TestPyPI
 pip install --index-url https://test.pypi.org/simple/ groany
 ```
 
@@ -62,13 +67,13 @@ First, fork and clone down this repo.
 
 Then, do `pip install` for development purposes, like so:
 
-```
+```sh
 pip install -e .[dev]
 ```
 
 Now, you want to link your local copy of groany into your binary PATH. `pip` makes this super easy to do with the following command. After this, invoking `groany` from the CLI w`__token__` as the username. For password, justill run your project in the terminal. Changes in your source code should automatically propagate globally.
 
-```
+```sh
 pip uninstall groany; # in case there's an older version installed
 pip install --editable .
 ```
@@ -79,7 +84,7 @@ Cool! You're all set up! To contribute back, simply open a PR from your repo to 
 
 You can test the project using the following command from the root directory of the project.
 
-```
+```sh
 ./test.sh
 ```
 
@@ -87,7 +92,7 @@ You can test the project using the following command from the root directory of 
 
 To manually run the CLI, you can either use a locally installed copy as described in the `Dev Workflow` section. Or, you can use...
 
-```
+```sh
 ./cli.sh
 ```
 
@@ -95,7 +100,7 @@ To manually run the CLI, you can either use a locally installed copy as describe
 
 Publishing is usually done by the core team. Here are the steps we take in order to publish the repo, from the root directory of the project.
 
-```
+```sh
 ./build.sh;
 ./publish.sh;
 ```

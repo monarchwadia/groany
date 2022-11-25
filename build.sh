@@ -1,4 +1,4 @@
 #!/bin/bash
 
 rm -rf dist/;
-./test.sh && python -m build
+pip install -e .[dev] && ./test.sh && python -m build
