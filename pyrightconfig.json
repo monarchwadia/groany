@@ -1,0 +1,23 @@
+{
+  "include": [
+    "groany"
+  ],
+
+  "strict": ["groany"],
+  
+  "exclude": [
+    "**/__pycache__",
+    "src/experimental",
+    "src/typestubs"
+  ],
+
+  "defineConstant": {
+    "DEBUG": true
+  },
+
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": true,
+
+  "pythonVersion": "3.11",
+  "pythonPlatform": "Linux"
+}
